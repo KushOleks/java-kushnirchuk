@@ -28,7 +28,7 @@ public class Main {
         };
         System.out.println(paymentMessage);
 
-        // Використовуємо record-и
+
         CustomerRecord customer = new CustomerRecord("Ivan", "Petrov", "ivan@mail.com", LocalDate.of(2025, 1, 10));
         Product product = new Product("Laptop", 1500.0, 5, LocalDate.of(2025, 1, 5));
         ReviewRecord review = new ReviewRecord(product, customer, 5, "Great product!", LocalDate.of(2025, 2, 1));
