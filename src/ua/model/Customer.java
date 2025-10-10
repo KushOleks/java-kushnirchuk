@@ -4,7 +4,8 @@ import ua.util.Utils;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Customer {
+public class Customer implements Comparable<Customer>, Cloneable {
+
     private String firstName;
     private String lastName;
     private String email;
@@ -39,7 +40,7 @@ public class Customer {
 
     public String getEmail() { return email; }
     public void setEmail(String email) {
-        Utils.validateEmail(email); // тут перевірка через Utils
+        Utils.validateEmail(email);
         this.email = email;
     }
 
@@ -53,7 +54,8 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{firstName='" + firstName + "', lastName='" + lastName + "', email='" + email + "', registrationDate=" + registrationDate + "}";
+        return "Customer{firstName='" + firstName + "', lastName='" + lastName +
+                "', email='" + email + "', registrationDate=" + registrationDate + "}";
     }
 
     @Override
@@ -70,5 +72,29 @@ public class Customer {
     @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, email, registrationDate);
+    }
+
+    @Override
+    public int compareTo(Customer other) {
+        int cmp = this.lastName.compareToIgnoreCase(other.lastName);
+        if (cmp == 0) {
+            cmp = this.firstName.compareToIgnoreCase(other.firstName);
+        }
+        return cmp;
+    }
+
+    @Override
+    public Customer clone() {
+        try {
+            return (Customer) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError("Cloning not supported", e);
+        }
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Customer object is being garbage collected: " + this.firstName);
+        super.finalize();
     }
 }
