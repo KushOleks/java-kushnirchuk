@@ -1,0 +1,52 @@
+жовт. 23, 2025 8:12:07 ПП ua.MainExceptions main
+INFO: Program started.
+жовт. 23, 2025 8:12:08 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Starting to read products from file: data/products.csv
+жовт. 23, 2025 8:12:08 ПП ua.util.FileDataReader readProductsFromFile
+SEVERE: File not found: data/products.csv
+жовт. 23, 2025 8:12:08 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Finished reading file (finally block).
+жовт. 24, 2025 12:57:34 ПП ua.MainExceptions main
+INFO: Program started.
+жовт. 24, 2025 12:57:34 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Starting to read products from file: data/products.csv
+жовт. 24, 2025 12:57:34 ПП ua.util.FileDataReader readProductsFromFile
+FINE: Reading line 1: Laptop,1500,5,2025-01-05
+жовт. 24, 2025 12:57:34 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Product added successfully: Product{name='Laptop', price=1500.0, stock=5, createdDate=2025-01-05}
+жовт. 24, 2025 12:57:34 ПП ua.util.FileDataReader readProductsFromFile
+FINE: Reading line 2: Mouse,25,100,2025-02-01
+жовт. 24, 2025 12:57:34 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Product added successfully: Product{name='Mouse', price=25.0, stock=100, createdDate=2025-02-01}
+жовт. 24, 2025 12:57:34 ПП ua.util.FileDataReader readProductsFromFile
+FINE: Reading line 3: Keyboard,40,50,2025-02-10
+жовт. 24, 2025 12:57:34 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Product added successfully: Product{name='Keyboard', price=40.0, stock=50, createdDate=2025-02-10}
+жовт. 24, 2025 12:57:34 ПП ua.util.FileDataReader readProductsFromFile
+FINE: Reading line 4: Monitor,-200,10,2025-03-01
+жовт. 24, 2025 12:57:34 ПП ua.util.FileDataReader readProductsFromFile
+WARNING: Negative values found at line 4
+жовт. 24, 2025 12:57:34 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Finished reading file (finally block).
+жовт. 24, 2025 1:21:34 ПП ua.MainExceptions main
+INFO: Program started.
+жовт. 24, 2025 1:21:34 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Starting to read products from file: data/products.csv
+жовт. 24, 2025 1:21:34 ПП ua.util.FileDataReader readProductsFromFile
+FINE: Reading line 1: Laptop,1500,5,2025-01-05
+жовт. 24, 2025 1:21:34 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Product added successfully: Product{name='Laptop', price=1500.0, stock=5, createdDate=2025-01-05}
+жовт. 24, 2025 1:21:34 ПП ua.util.FileDataReader readProductsFromFile
+FINE: Reading line 2: Mouse,25,100,2025-02-01
+жовт. 24, 2025 1:21:34 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Product added successfully: Product{name='Mouse', price=25.0, stock=100, createdDate=2025-02-01}
+жовт. 24, 2025 1:21:34 ПП ua.util.FileDataReader readProductsFromFile
+FINE: Reading line 3: Keyboard,40,50,2025-02-10
+жовт. 24, 2025 1:21:34 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Product added successfully: Product{name='Keyboard', price=40.0, stock=50, createdDate=2025-02-10}
+жовт. 24, 2025 1:21:34 ПП ua.util.FileDataReader readProductsFromFile
+FINE: Reading line 4: Monitor,-200,10,2025-03-01
+жовт. 24, 2025 1:21:34 ПП ua.util.FileDataReader readProductsFromFile
+WARNING: Negative values found at line 4
+жовт. 24, 2025 1:21:34 ПП ua.util.FileDataReader readProductsFromFile
+INFO: Finished reading file (finally block).
