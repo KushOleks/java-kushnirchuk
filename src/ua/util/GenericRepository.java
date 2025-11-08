@@ -36,4 +36,39 @@ public class GenericRepository<T> {
         logger.warning("Object with identity '" + identity + "' not found");
         return null;
     }
+
+
+
+    public List<T> sortNatural() {
+        if (storage.isEmpty() || !(storage.get(0) instanceof Comparable)) {
+            logger.warning("Sorting failed: elements are not Comparable");
+            return List.of();
+        }
+        List<T> sorted = new ArrayList<>(storage);
+        Collections.sort((List) sorted);
+        logger.info("Sorted collection using natural order (Comparable)");
+        return sorted;
+    }
+
+    public List<T> sortBy(Comparator<T> comparator) {
+        List<T> sorted = new ArrayList<>(storage);
+        sorted.sort(comparator);
+        logger.info("Sorted collection using comparator: " + comparator);
+        return sorted;
+    }
+    public List<T> sortByIdentity(String order) {
+        List<T> sorted = new ArrayList<>(storage);
+        Comparator<T> comparator = Comparator.comparing(identityExtractor::extractIdentity);
+
+        if ("desc".equalsIgnoreCase(order)) {
+            comparator = comparator.reversed();
+            logger.info("Sorting by identity in descending order");
+        } else {
+            logger.info("Sorting by identity in ascending order");
+        }
+
+        sorted.sort(comparator);
+        return sorted;
+    }
+
 }

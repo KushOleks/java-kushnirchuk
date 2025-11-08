@@ -2,9 +2,10 @@ package ua.model;
 
 import ua.util.Utils;
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Product {
+public class Product implements Comparable<Product> {
     private String name;
     private double price;
     private int stock;
@@ -31,7 +32,7 @@ public class Product {
 
     public double getPrice() { return price; }
     public void setPrice(double price) {
-        if (price < 0) {  // тут можна залишити просту перевірку
+        if (price < 0) {
             throw new IllegalArgumentException("Invalid price");
         }
         this.price = price;
@@ -54,8 +55,23 @@ public class Product {
     }
 
     @Override
+    public int compareTo(Product other) {
+        return Double.compare(this.price, other.price);
+    }
+
+    public static final Comparator<Product> BY_NAME =
+            Comparator.comparing(Product::getName);
+
+    public static final Comparator<Product> BY_STOCK =
+            Comparator.comparingInt(Product::getStock);
+
+    public static final Comparator<Product> BY_DATE =
+            Comparator.comparing(Product::getCreatedDate);
+
+    @Override
     public String toString() {
-        return "Product{name='" + name + "', price=" + price + ", stock=" + stock + ", createdDate=" + createdDate + "}";
+        return "Product{name='" + name + "', price=" + price +
+                ", stock=" + stock + ", createdDate=" + createdDate + "}";
     }
 
     @Override
