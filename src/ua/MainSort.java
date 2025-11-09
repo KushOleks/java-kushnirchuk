@@ -11,7 +11,7 @@ public class MainSort {
     private static final Logger logger = Logger.getLogger(MainSort.class.getName());
 
     public static void main(String[] args) {
-        logger.info("=== demonstration ===");
+        logger.info("=== demonstrationnn ===");
 
         StudentRepository studentRepo = new StudentRepository();
         GroupRepository groupRepo = new GroupRepository();
