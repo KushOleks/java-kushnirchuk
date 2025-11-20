@@ -18,3 +18,7 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+application {
+    mainClass = 'ua.MainSerialization'
+}
